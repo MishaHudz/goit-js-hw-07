@@ -25,9 +25,10 @@ listLink.addEventListener("click", onlistLinkClick);
 
 function onlistLinkClick(evt) {
   evt.preventDefault();
-  if (evt.target === evt.currentTarget) return;
-  const originalPhoto = evt.target.dataset.source;
 
+  if (evt.target.nodeName !== "IMG") return;
+
+  const originalPhoto = evt.target.dataset.source;
   createModal(originalPhoto);
 }
 
